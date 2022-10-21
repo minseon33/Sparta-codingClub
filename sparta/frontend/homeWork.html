@@ -84,11 +84,31 @@
         }
 
     </style>
+    <script>
+        $(document).ready(function () {
+             $.ajax({
+            type: "GET",
+            url: "http://spartacodingclub.shop/sparta_api/weather/seoul",
+            data: {},
+            success: function (response) {
+                console.log(response)
+                let tempSeoul = response['temp']
+                console.log(tempSeoul)
+                $('#temp').text(tempSeoul)
+
+
+
+            }
+          })
+        });
+
+    </script>
 </head>
 
 <body>
     <div class="myTitle">
         <h1>이영지 팬명록</h1>
+        <p>현재기온 : <span id="temp">00.00</span>도</p>
     </div>
 
     <div class="mypost">
