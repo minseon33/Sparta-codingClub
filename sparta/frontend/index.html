@@ -96,6 +96,21 @@
 
 </style>
 <script>
+    $.ajax({
+        type: "GET",
+        url: "http://spartacodingclub.shop/sparta_api/seoulair",
+        data: {},
+        success: function (response) {
+            let lows = response['RealtimeCityAir']['row']
+            for(let i=0; i<lows.length;i++){
+                let gu_name = lows[i]['MSRSTE_NM']
+                let gu_mise = lows[i]['IDEX_MVL']
+                console.log(gu_name,gu_mise)
+
+            }
+
+        }
+    })
     let count = 0
     function openBox(){
         $('#post-box').show();
