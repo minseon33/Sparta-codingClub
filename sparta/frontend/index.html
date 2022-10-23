@@ -96,30 +96,51 @@
 
 </style>
 <script>
-    $.ajax({
-        type: "GET",
-        url: "http://spartacodingclub.shop/sparta_api/seoulair",
-        data: {},
-        success: function (response) {
-            let lows = response['RealtimeCityAir']['row']
-            for(let i=0; i<lows.length;i++){
-                let gu_name = lows[i]['MSRSTE_NM']
-                let gu_mise = lows[i]['IDEX_MVL']
-                console.log(gu_name,gu_mise)
+    $(document).ready(function () {
+        listing();
+    });
 
+
+    function listing() {
+        $('#cards-box').empty()
+        $.ajax({
+            type: "GET",
+            url: "http://spartacodingclub.shop/web/api/movie",
+            data: {},
+            success: function (response) {
+                console.log(response)
+                let rows = response['movies']
+                console.log(rows)
+                for (let i = 0; i < rows.length; i++) {
+                    let row_comment = rows[i]['comment']
+                    let row_desc = rows[i]['desc']
+                    let row_image = rows[i]['image']
+                    let row_star = rows[i]['star']
+                    let row_title = rows[i]['title']
+                    console.log(row_comment, row_title)
+
+                    let star_imgs = '⭐'.repeat(row_star)
+
+                    let temp_html = `
+                <div class="col">
+                    <div class="card">
+                        <img src="${row_image}"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">${row_title}</h5>
+                             <p class="card-text">${row_desc}</p>
+                             <p>${star_imgs }</p>
+                             <p class="mycoment">${row_comment}</p>
+                        </div>
+                    </div>
+                 </div>
+                `
+                    $('#cards-box').append(temp_html)
+
+                }
             }
-
-        }
-    })
-    let count = 0
-    function openBox(){
-        $('#post-box').show();
+        })
     }
-
-    function closeBox() {
-         $('#post-box').hide();
-    }
-
 </script>
 
 <body>
