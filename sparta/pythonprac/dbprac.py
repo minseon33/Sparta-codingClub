@@ -12,6 +12,7 @@ doc = {
 # db.users.insert_one({'name':'john', 'age':20})
 # db.users.insert_one({'name':'ann', 'age':20})
 
+# >> 여기 들어가는 users 는 테이블이름...!!!!!!!!! 유레카..!!!!
 # ---------------- 데이터 하나 삭제
 # db.users.delete_one({'name':'bob'})
 # db.users.insert_one({'name':'bobby', 'age':27})
