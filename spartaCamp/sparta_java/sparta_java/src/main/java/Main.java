@@ -9,7 +9,10 @@ public class Main {
         int minseonNumber = 33;
         System.out.println("minseonNumber = "+ minseonNumber);
 
-        final int finalNumber = 1;
+        int finalNumber = 1;
+        sparta = "good sparta";
+        System.out.println(finalNumber);
+        System.out.println(sparta);
 
     }
 }
