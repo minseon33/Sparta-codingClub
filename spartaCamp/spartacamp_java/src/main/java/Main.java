@@ -4,21 +4,19 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int sumOdd = 0;
-        int sumEven = 0;
-        for (int i = 0; i < 30; i++) {
-            int value = i + 1;
-            if (value % 2 == 0) {
-                sumEven += value;
+        int number = 10;
+        int result;
 
-            } else {
-                sumOdd += value;
-
+        for(int i=10; i>= 0 ; i--){
+            try{
+                result = number/i;
+                System.out.println(result);
+            }catch (Exception e){
+                System.out.println("Exception 발생:" + e.getMessage());
+            }finally {
+                System.out.println("항상 실행되는 finally 구문");
             }
-
         }
-        System.out.println("짝수의 합 :" + sumOdd);
-        System.out.println("홀수의 합 :" + sumEven);
 
     }
 }
