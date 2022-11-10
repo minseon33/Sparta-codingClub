@@ -17,10 +17,7 @@ def find_max_occurred_alphabet(string):
             max_occurrence = occurrence
             max_alphbet = alphabet
 
-
-
     return max_alphbet
-
 
 result = find_max_occurred_alphabet(input)
 print(result)
