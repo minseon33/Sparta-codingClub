@@ -1,17 +1,21 @@
-T = int(input())
-for t in range(T):
-    #range(t) 는 t 숫자만큼 반복할것이다.
-    n,s,e,k = map(int,input().split())
-    # input으로 들어온 값을 인트값으로 매핑(대응)해준다 n, s, e, k 변수에..
-    a = list(map(int,input().split()))
-    # input()으로 들어온 값을 인트값으로 매핑(대응)해줄건데 리스트로 만들어서 a 변수에 넣어준다.
-    print(a)
-    a = a[s-1:e]
-    #리스트 a의 s번째 부터 슬라이싱 해줄건데, 인덱스 번호로 뽑아줘야 하니까 s-1을 해주고,
-    # e번째 까지 뽑아주는건데, 인덱스 번호 앞까지 짤리는거니까, e는 굳이 -1을 안해줘도 된다.
-    print(a)
-    a.sort()
-    # a를 오름차순으로 정렬해주고, sort()의 기본값은 오름차순, 거꾸로 해주려면 reverse=True 해주어야 함.
-    print("#%d %d" %(t+1, a[k-1]))
-    # 출력할 때 포맷팅을 사용할건데, t가 인덱스 0번부터 도니까 #1로 출력되려면 t+1을 해줘야한다.
-    #a의 k번째 값을 찾아줘야 하는데, 인덱스가 0번부터 시작하니까 k-1을 해주어야 한다.
+import random as r
+a = []
+# print(a)
+b = list()
+# print(b)
+
+a = [1,2,3,4,5]
+# print(a)
+# print(a[0])
+
+b=list(range(1,11))
+# print(b)
+
+c = a+b
+# print(c)
+
+print(a)
+a.append(6)
+print(a)
+a.insert(3,7)
+# 3번 인덱스에 7을 집어넣는다...
