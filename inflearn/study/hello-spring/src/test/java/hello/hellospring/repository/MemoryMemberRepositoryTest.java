@@ -12,6 +12,7 @@ import static org.assertj.core.api.Assertions.*;
 
 public class MemoryMemberRepositoryTest {
 
+
     MemoryMemberRepository  repository = new MemoryMemberRepository();
 
     @AfterEach
@@ -31,19 +32,20 @@ public class MemoryMemberRepositoryTest {
         assertThat(member).isEqualTo(result);
     }
 
+
     @Test
     public void findByName(){
         Member member1 = new Member();
-        member1.setName(("spring1"));
+        member1.setName("spring1");
         repository.save(member1);
 
         Member member2 = new Member();
         member2.setName("spring2");
         repository.save(member2);
 
-        Member result  = repository.findByName("spring1").get();
+        Member result  = repository.findByName("spring2").get();
 
-        assertThat(result).isEqualTo(member1);
+        assertThat(result).isEqualTo(member2);
     }
 
     @Test
