@@ -7,7 +7,7 @@ for i in range(1,n+1): #n+1 까지 해야 n까지 돌게된다. 왜냐하면 ran
     for j in range(1,m+1): #주사위 눈이 1부터 시작하니까 1부터 돌아야 한다.
         cnt[i+j] += 1
 for i in range(n+m+1):
-    if cnt[i]>max:
+    if cnt[i] > max:
         max = cnt[i]
 
 for i in range(n+m+1):
