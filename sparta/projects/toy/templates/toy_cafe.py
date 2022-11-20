@@ -12,6 +12,9 @@ while True:
     choice_menu = ''
     choice_topping = ''
     final_buy = False
+    user_money = 0
+    payment  = 0
+
     # 메뉴판 출력
     print("----------<메뉴판>----------")
     for x in menu:
@@ -27,6 +30,8 @@ while True:
         if choice_menu == key:
             if value > 0:
                 print("재고가 있습니다.")
+                payment += menu[choice_menu]
+                print(f'payment : {payment}')
             else:
                 print("재고가 없습니다.")
                 break
@@ -38,19 +43,32 @@ while True:
         for x in topping:
             print(f'     {x} : {topping.get(x)}')
         choice_topping = input('추가할 토핑을 입력하세요-> ')
+        payment += topping[choice_topping]
+        print(f'payment : {payment}')
 
     elif topping_check.upper() == "N":
         print("토핑을 추가하지 않습니다.")
     else:
         print("Y 또는 N로 입력해주세요.")
-    # 결제확인
-    check_check = input('결제하시겠습니까? Y or N-> ')
+        choice_topping = input('추가할 토핑을 입력하세요-> ')
 
-    if check_check.upper() == "Y":
+    # 결제확인
+    buy_check = input('결제하시겠습니까? Y or N-> ')
+
+    if buy_check.upper() == "Y":
         final_buy = True
 
-    elif check_check.upper() == "N":
+    elif buy_check.upper() == "N":
         print("결재를 취소합니다. 처음으로 돌아갑니다.")
         break
     else:
         print("Y 또는 N로 입력해주세요.")
+        buy_check = input('결제하시겠습니까? Y or N-> ')
+
+    # 결제진행
+    if final_buy == True:
+        user_money = input('현금을 숫자로만 입력해주세요.-> ')
+        # if user_money >= payment:
+        #
+
+
