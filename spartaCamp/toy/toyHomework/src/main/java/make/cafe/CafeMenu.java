@@ -1,14 +1,13 @@
 package make.cafe;
 
 
-import java.sql.SQLOutput;
 import java.util.HashMap;
 
-public class cafeMenu {
+public class CafeMenu {
 
     String name;
 
-    cafeMenu(){
+    CafeMenu(){
     }
 
     HashMap<String, Integer> beverage = new HashMap<String, Integer>();
@@ -30,11 +29,11 @@ public class cafeMenu {
     }
     //토핑 메뉴
     public void toppingMenu() {
-        topping.put("샷추가", 500);
+        topping.put("샷", 500);
 
-        topping.put("휘핑크림 추가", 1000);
+        topping.put("휘핑크림", 1000);
 
-        topping.put("우유 추가", 1500);
+        topping.put("우유", 1500);
     }
 
 
@@ -59,6 +58,5 @@ public class cafeMenu {
             System.out.println(i + " : " + topping.get(i));
         }
     }
-
 
 }
