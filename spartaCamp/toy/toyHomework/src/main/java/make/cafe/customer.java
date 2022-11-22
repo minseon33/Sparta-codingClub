@@ -21,7 +21,7 @@ public class customer {
 //
 //    } >> 이거 오버로딩 아님;
 
-    public void putBeverage(String name) {
+    public void orderBeverage(String name) {
         customerBeverage.beverageMenu();
         System.out.println("고객이 주문함");
         System.out.println(name + ":" + customerBeverage.beverage.get(name));
@@ -29,7 +29,7 @@ public class customer {
 
     }
 
-    public void putTopping(String name) {
+    public void orderTopping(String name) {
         customerBeverage.toppingMenu();
     }
 }
