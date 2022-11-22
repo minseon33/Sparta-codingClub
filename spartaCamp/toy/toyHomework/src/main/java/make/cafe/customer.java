@@ -1,19 +1,16 @@
 package make.cafe;
 
 public class customer {
-    cafeMenu beverage = new cafeMenu();
+    cafeMenu customerBeverage = new cafeMenu();
 
 
-    String beverageName;
-    int beveragePrice;
-    String toppingName;
-    int toppingPrice;
+    String name;
 
-    customer(){
+    customer() {
     }
 
 
-//    customer(String beverageName, int beveragePrice ){
+    //    customer(String beverageName, int beveragePrice ){
 //        this.beverageName = beverageName;
 //        this.beveragePrice = beveragePrice;
 //
@@ -24,17 +21,15 @@ public class customer {
 //
 //    } >> 이거 오버로딩 아님;
 
-
-    public void putBeverage(String beverageName){
-        beverage.beverageMenu();
-        System.out.println(beverage.get(beverageName));
-
+    public void putBeverage(String name) {
+        customerBeverage.beverageMenu();
+        System.out.println("고객이 주문함");
+        System.out.println(name + ":" + customerBeverage.beverage.get(name));
 
 
     }
-    public void putTopping(String toppingName,int toppingPrice){
-        beverage.toppingMenu();
-        System.out.println( toppingName +"," + toppingPrice );
 
+    public void putTopping(String name) {
+        customerBeverage.toppingMenu();
     }
 }
