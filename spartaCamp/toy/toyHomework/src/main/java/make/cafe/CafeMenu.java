@@ -29,11 +29,13 @@ public class CafeMenu {
     }
     //토핑 메뉴
     public void toppingMenu() {
-        topping.put("샷", 500);
+        topping.put("shot", 500);
 
-        topping.put("휘핑크림", 1000);
+        topping.put("whippingCream", 1000);
 
-        topping.put("우유", 1500);
+        topping.put("milk", 1500);
+
+        topping.put("none",0);
     }
 
 
