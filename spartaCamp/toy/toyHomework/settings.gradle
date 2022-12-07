@@ -1,0 +1,4 @@
+rootProject.name = 'toyHomework'
+include 'src:main:hongongJava'
+findProject(':src:main:hongongJava')?.name = 'hongongJava'
+
