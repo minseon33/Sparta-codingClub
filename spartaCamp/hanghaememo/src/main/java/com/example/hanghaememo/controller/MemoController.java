@@ -15,6 +15,7 @@ import java.util.List;
 public class MemoController {
 
     private final MemoService memoService;
+
     @GetMapping("/")
     public ModelAndView home() {
         return new ModelAndView("index");
@@ -36,7 +37,5 @@ public class MemoController {
     }
 
     @DeleteMapping("/api/memos/{id}")
-    public Long deleteMemo(@PathVariable Long id) {
-        return memoService.deleteMemo(id);
-    }
+    public Long deleteMemo(@PathVariable Long id) {return memoService.deleteMemo(id);}
 }
